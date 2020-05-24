@@ -1,6 +1,13 @@
 # rsync-bkp
 Simple backup of config files from single-board computers (like Raspberry Pi)
 
+### Table of contents
+* [SOLUTION ARCHITECTURE](#SOLUTION-ARCHITECTURE)
+* [OMV NAS SETUP](#OMV-NAS-SETUP)
+* [RSYNC CLIENT SETUP](#RSYNC-CLIENT-SETUP)
+* [INSTALLATION AND CONFIGURATION](INSTALLATION-AND-CONFIGURATION)
+* [USAGE](USAGE)
+
 (2020/05/23) Relative unreliability of single board controllers like Raspberry Pi (mainly due to SD card wear out) forced us to consider some forms of configuration backup for these little devices. So even if the SD card crashes, you can burn your new SD card, enter basic configuration (like network connection) and then restore remaining config files from the backup. Backup is not a rocket science, of course, but is often overlooked due to resource and time constraints associated with the initial implementation project. And then there is too late to remember about performing the backup... 
 
 Rsync has been selected as the best candidate:
