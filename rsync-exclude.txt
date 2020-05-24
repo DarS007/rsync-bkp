@@ -1,0 +1,14 @@
+# DarS - 2020/05/24
+# Enter here the list of files to be excluded from 'run-rsync_bkp.sh',
+# for instance 'passwd', 'shadow' or other files with sensitive data inside.
+# Last line with '.[a-z]*' excludes hidden files and directories
+# (with names starting from '.')
+#
+/etc/passwd
+/etc/passwd-
+/etc/shadow
+/etc/shadow-
+/etc/sudoers
+/etc/sudoers-
+/etc/fake-hwclock.data
+.[a-z]*
