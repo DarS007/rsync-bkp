@@ -1,0 +1,8 @@
+# 2020/05/24 - DarS
+# Enter here the list of directories for backup via 'rsync-run_bkp.sh'
+# script.
+# Once you define your directories for backup here, you can exclude certain
+# files by entering theirn names in 'rsync-exclude.txt' file.
+/etc
+/var/www/html
+/home
