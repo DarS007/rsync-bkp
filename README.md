@@ -21,3 +21,5 @@ OMV NAS has to be pre-configured to became 'rsync' target. There are several way
 When using 'daemon access mode', you have to define so-called *modules* on the 'receiving side'. These 'modules' define the storage resource available for the tasks. 'Sending side' can then connect to such 'module' and send there the reguired files, without the need for detailed knowledge on target side directory structure. Simple and secure.
 
 How to configure the 'module' in OMV? Log in to OMV web GUI. Then go to *Services → Rsync* menu and switch from default *Jobs* to *Server* (click *Server* tab). This will configure 'rsync' in daemon mode on the target. Being there, click on *Modules* to define the module for RPi backup. 
+
+https://raw.githubusercontent.com/DarS007/rsync-bkp/master/OMV_rsync_setup.01.png
