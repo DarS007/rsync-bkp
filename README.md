@@ -24,3 +24,31 @@ How to configure the 'module' in OMV? Log in to OMV web GUI. Then go to *Service
 
 ![alt text](https://raw.githubusercontent.com/DarS007/rsync-bkp/master/OMV_rsync_setup.01.png "OMV setup for 'rsync' daemon")
 
+Create there new *BACKUP* module which points to your disk share designated to RPi configuration storage. You can select *Use chroot* and enable *user authentication* for improved security.
+
+Once done, switch to client machine and type there the following in the 'ssh' console to see whether *BACKUP* module is properly visible/accessible:
+```
+> sudo rsync rsync://YOUR.OMV.SERVER/
+BACKUP          Resource for backing the configuration files from RPis
+```
+
+### RSYNC CLIENT SETUP
+
+Once the 'rsync target' (receiving side) was configured, it was time to take care of 'rsync' on Raspberry Pi (sending) side. It's rsync binary supposed to:
+  *  make the connection to rsync on OMV NAS
+  *  open and read the local file with list of directories for backing up (and another file with exclude list)
+  *  transfer the files to receiving side
+
+Several nice guides can help with proper configuration:
+  *  How to rsync only a specific list of files?
+  *  How to use rsync --list-only source to list all the files in that directory?
+
+It was determined that 'rsync -rvut' is good enough for syncing RPi's config files to central storage. The '-rvut' options were used for FAT target, and fit for OMV setup as well (where 'rsync' is limited to certain user and to limited file attributes controlled by OMV).
+
+Reference command for backing up the RPi configuration files:
+```
+> sudo rsync -rbvut --recursive --files-from=rsync-src_files.txt --exclude-from=rsync-exclude.txt / rsync://YOUR.OMV.SERVER/BACKUP/RPI_NAME
+```
+where:
+ * 'rsync-src_files.txt' is prepared for each RPi individually and consist of list of directories to be backed up
+ * 'rsync-exclude.txt' includes list of exclusions like 'passwd' and 'shadow' files.
