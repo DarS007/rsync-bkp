@@ -40,8 +40,8 @@ Once the 'rsync target' (receiving side) was configured, it was time to take car
   *  transfer the files to receiving side
 
 Several nice guides can help with proper configuration:
-  *  How to rsync only a specific list of files?
-  *  How to use rsync --list-only source to list all the files in that directory?
+  *  [How to rsync only a specific list of files?](https://stackoverflow.com/questions/16647476/how-to-rsync-only-a-specific-list-of-files)
+  *  [How to use rsync --list-only source to list all the files in that directory?](https://stackoverflow.com/questions/13414086/how-to-use-rsync-list-only-source-to-list-all-the-files-in-that-directory)
 
 It was determined that 'rsync -rvut' is good enough for syncing RPi's config files to central storage. The '-rvut' options were used for FAT target, and fit for OMV setup as well (where 'rsync' is limited to certain user and to limited file attributes controlled by OMV).
 
