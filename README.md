@@ -52,3 +52,17 @@ Reference command for backing up the RPi configuration files:
 where:
  * 'rsync-src_files.txt' is prepared for each RPi individually and consist of list of directories to be backed up
  * 'rsync-exclude.txt' includes list of exclusions like 'passwd' and 'shadow' files.
+
+### INSTALLATION AND CONFIGURATION
+Place three files in your home directory:
+```
+ rsync-run_bkp.sh 
+ rsync-exclude.txt
+	rsync-src_files.txt
+```
+Edit *rsync-exclude.txt* and *rsync-src_files.txt* to suit your needs.
+
+### USAGE
+Run *./rsync-run_bkp.sh* from your home directory (*rsync-exclude.txt* and *rsync-src_files.txt* needs to be there) as 'sudo'.
+
+Why 'sudo'? Because majority of RPi configuration files are in '/etc' directory, where the regular user has a limited access.
