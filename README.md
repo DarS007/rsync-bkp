@@ -16,7 +16,8 @@ What needs to be backuped? The unique files that cannot be restored by flashing 
  * content of web page
  * your own code
  * etc
-You are offered two files *rsync-src_files.txt* and *rsync-exclude.txt* that you can tailor to suit your needs. Both files are pre-populated with defaults, by the way.
+
+You are offered two files *rsync-src_files.txt* (defines what to backup) and *rsync-exclude.txt* (defines what NOT to backup) that you can tailor to suit your needs. Both files are pre-populated with defaults, by the way.
 
 *Rsync* has been selected as the best candidate for syncing mechanism. It is:
   * extremely flexible
