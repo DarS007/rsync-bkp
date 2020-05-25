@@ -10,7 +10,15 @@ Simple backup of config files from single-board computers (like Raspberry Pi)
 
 (2020/05/23) Relative unreliability of single board controllers like Raspberry Pi (mainly due to SD card wear out) forced us to consider some forms of configuration backup for these little devices. So even if the SD card crashes, you can burn your new SD card, enter basic configuration (like network connection) and then restore remaining config files from the backup. Backup is not a rocket science, of course, but is often overlooked due to resource and time constraints associated with the initial implementation project. And then there is too late to remember about performing the backup... 
 
-Rsync has been selected as the best candidate:
+What needs to be backuped? The unique files that cannot be restored by flashing new OS on SD card:
+ * */etc* configuration files
+ * */home* directory
+ * content of web page
+ * your own code
+ * etc
+You are offered two files *rsync-src_files.txt* and *rsync-exclude.txt* that you can tailor to suit your needs. Both files are pre-populated with defaults, by the way.
+
+*Rsync* has been selected as the best candidate for syncing mechanism. It is:
   * extremely flexible
   * simple and cross-platform
   * high-performance and scalable
