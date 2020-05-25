@@ -68,6 +68,7 @@ Reference command for backing up the RPi configuration files:
 where:
  * 'rsync-src_files.txt' is prepared for each RPi individually and consist of list of directories to be backed up
  * 'rsync-exclude.txt' includes list of exclusions like 'passwd' and 'shadow' files.
+
 The above command gives you the idea what and how is backed up. This command is executed by *rsync-run_bkp.sh* script.
 
 ### INSTALLATION AND CONFIGURATION
