@@ -1,18 +1,21 @@
 #!/bin/bash
 #########################################################
 ## 2020/05/24 - DarS
-## Script file to do a configuration backup for RPi.
-## Place it in home directory of RPi from where you want to backup its
-## configuration. Then:
-##   - change the BKPCLIENT to the name of THIS machine
-##   - change the NASSERVER to the name FQDN (or IP) of your OMV NAS,
-##     where runs properly configured 'rsync' in 'daemon access mode'
-##   - enter the list of directories for backup to DIR2BACKUP file 
-##     (default 'rsync-src_files.txt')
+## Script file to perform a configuration backup for RPi.
+##
+## If you want to do a 'system configuration backup' for your Raspberry Pi, 
+##  place this script in your home directory.
+## Then:
+##   - change the BKPCLIENT to the name of your (THIS) machine
+##   - change the NASSERVER to the FQDN name (or IP) of your OMV NAS.
+##     Properly configured 'rsync' has to run in 'daemon access mode'
+##     on your NAS. That 'rsync' will receive the backup data from your RPi.
+##   - enter the list of directories to be backed up to DIR2BACKUP file 
+##     (default file name: 'rsync-src_files.txt')
 ##     Please remember this script DOES NOT follow the (sym)links,
-##     therefore you need to think of your list of directories accordingly
+##     therefore you need to prepare your list of directories accordingly
 ##   - enter the list of files to be excluded to EXCLUDEFILE
-##     (default 'rsync-exclude.txt')
+##     (default file name 'rsync-exclude.txt')
 ##   - properly configure the destination resource on NAS
 ##      - 'rsync' needs to be configured in 'daemon' mode with
 ##         BACKUP module created and enabled
